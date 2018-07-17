@@ -1,0 +1,12 @@
+D-Infinity Transport Limited Accumulation - 2
+dinftranslimaccum2
+Specialized Grid Analysis tools
+ParameterRaster|-ang|D-Infinity Flow Direction Grid|False
+ParameterRaster|-tsup|Supply Grid|False
+ParameterRaster|-tc|Transport Capacity Grid|False
+ParameterRaster|-cs|Input Concentration Grid|False
+ParameterVector|-o|Outlets Shapefile|True
+ParameterBoolean|-nc|Check for edge contamination|True
+OutputRaster|-tla|Transport Limited Accumulation Grid
+OutputRaster|-tdep|Desposition Grid 
+OutputRaster|-ctpt|Output Concentration Grid

@@ -1,0 +1,8 @@
+Peuker Douglas
+peukerdouglas
+Stream Network Analysis tools
+ParameterRaster|-fel|Elevation Grid|False
+ParameterNumber|-parwm|Center Smoothing Weight|0|None|0.4
+ParameterNumber|-parws|Side Smoothing Weight|0|None|0.1
+ParameterNumber|-parwd|Diagonal Smoothing Weight|0|None|0.05
+OutputRaster|-ss|Stream Source Grid

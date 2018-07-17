@@ -1,0 +1,6 @@
+Pit Remove
+pitremove
+Basic Grid Analysis tools
+ParameterRaster|-z|Elevation Grid|False
+ParameterRaster|-sfdr|Flow Directions Grid|True
+OutputRaster|-fel|Pit Removed Elevation Grid

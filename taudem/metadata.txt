@@ -1,0 +1,30 @@
+[general]
+name=qgs3TauDEM
+qgisMinimumVersion=3.0
+description=QGIS3 implementation of TauDEM hydrology algorithms
+version=0.1
+author=Greg Leonard
+email=greg.leonard@otago.ac.nz
+
+about=This plugin provides an implementation of the TauDEM hydrology algorithms.
+
+tracker=http://bugs
+repository=http://repo
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=python
+
+homepage=http://homepage
+category=Analysis
+icon=taudem.svg
+# experimental flag
+experimental=True
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False

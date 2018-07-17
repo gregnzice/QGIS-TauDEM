@@ -1,0 +1,10 @@
+Grid Network
+gridnet
+Basic Grid Analysis tools
+ParameterRaster|-p|D8 Flow Direction Grid|False
+ParameterVector|-o|Outlets Shapefile|True
+ParameterRaster|-mask|Mask Grid|True
+ParameterNumber|-thresh|Mask Threshold|0|None|100
+OutputRaster|-plen|Longest Upslope Length Grid
+OutputRaster|-tlen|Total Upslope Length Grid
+OutputRaster|-gord|Strahler Network Order Grid

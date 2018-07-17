@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="plugins/taudem/" >
+        <file>taudem.svg</file>
+    </qresource>
+</RCC>

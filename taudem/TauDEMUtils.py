@@ -36,7 +36,6 @@ from qgis.core import QgsApplication,QgsMessageLog
 from qgis.core import Qgis
 from processing.core.ProcessingConfig import ProcessingConfig
 from processing.core.ProcessingLog import ProcessingLog
-from processing.tools.system import isMac
 
 class TauDEMUtils:
 
@@ -51,12 +50,16 @@ class TauDEMUtils:
         if folder is None:
             folder = ''
 
-        if isMac():
-            testfolder = '/usr/local/taudem'
-            if os.path.exists(os.path.join(testfolder, 'slopearea')):
-                folder = testfolder
-            else:
-                testfolder = '/usr/local/bin'
+            if  platform=='linux' or platform=='darwin':
+                testfolder = '/usr/local/taudem'
+                if os.path.exists(os.path.join(testfolder, 'slopearea')):
+                    folder = testfolder
+                else:
+                    testfolder = '/usr/local/bin'
+                    if os.path.exists(os.path.join(testfolder, 'slopearea')):
+                        folder = testfolder
+            if platform=='win32':
+                testfolder = 'C:/taudem'
                 if os.path.exists(os.path.join(testfolder, 'slopearea')):
                     folder = testfolder
         return folder
@@ -67,14 +70,14 @@ class TauDEMUtils:
         if folder is None:
             folder = ''
 
-        if isMac():
+        if platform=='linux' or platform=='darwin':
             testfolder = '/usr/local/bin/'
             if os.path.exists(os.path.join(testfolder, 'mpiexec')):
                 folder = testfolder
-            else:
-                testfolder = '/usr/local/bin'
-                if os.path.exists(os.path.join(testfolder, 'mpiexec')):
-                    folder = testfolder
+        if platform=='win32':
+            testfolder = 'C:/Program Files/Microsoft MPI/Bin'
+            if os.path.exists(os.path.join(testfolder, 'mpiexec.exe')):
+                folder = testfolder
         return folder
 
     @staticmethod

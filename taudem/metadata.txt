@@ -1,5 +1,5 @@
 [general]
-name=qgs3TauDEM
+name=TauDEM
 qgisMinimumVersion=3.0
 description=QGIS3 implementation of TauDEM hydrology algorithms
 version=0.1

@@ -228,7 +228,11 @@ class TauDEMAlgorithm(QgsProcessingAlgorithm):
 
     def helpUrl(self):
         helpPath='http://hydrology.usu.edu/taudem/taudem5/help53/'
-        return helpPath + '{}.html'.format(self.displayname.replace(" ", "").replace("-",""))
+        if self.displayname[-1]=='2':
+            helpname=self.displayname[:-1]
+        else:
+            helpname=self.displayname
+        return helpPath + '{}.html'.format(helpname.replace(" ", "").replace("-",""))
 
     def shortHelpString(self):
         with open(self.descriptionFile) as helpf:

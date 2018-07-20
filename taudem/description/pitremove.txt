@@ -2,5 +2,7 @@ Pit Remove
 pitremove
 Basic Grid Analysis tools
 ParameterRaster|-z|Elevation Grid|False
+ParameterBoolean|-4way|Fill considering only 4-way neighbors|False
+ParameterRaster|-depmask|Depression Mask Grid|True
 ParameterRaster|-sfdr|Flow Directions Grid|True
 OutputRaster|-fel|Pit Removed Elevation Grid

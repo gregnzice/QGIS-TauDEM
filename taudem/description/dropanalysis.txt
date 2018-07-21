@@ -5,7 +5,7 @@ ParameterRaster|-ad8|D8 Contributing Area Grid|False
 ParameterRaster|-p|D8 Flow Direction Grid|False
 ParameterRaster|-fel|Pit Filled Elevation Grid|False
 ParameterRaster|-ssa|Accumlated Stream Source Grid|False
-ParameterVector|-o|Outlets Shapefile|False
+ParameterVector|-o|Outlets Shapefile|0|False
 ParameterNumber|-parmin|Minimum Threshold|0|None|5
 ParameterNumber|-parmax|Maximum Threshold|0|None|500
 ParameterNumber|-parnum|Number of Threshold Values|0|None|10

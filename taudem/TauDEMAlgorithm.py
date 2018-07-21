@@ -96,7 +96,7 @@ class TauDEMAlgorithm(QgsProcessingAlgorithm):
             if pl[0]=='ParameterRaster':
                 self.addParameter(QgsProcessingParameterRasterLayer(pl[1],self.tr(pl[2]),'',bool(strtobool(pl[3]))))
             if pl[0]=='ParameterVector':
-                self.addParameter(QgsProcessingParameterVectorLayer(pl[1],self.tr(pl[2]),[QgsProcessing.TypeVector],'',bool(strtobool(pl[3]))))
+                self.addParameter(QgsProcessingParameterVectorLayer(pl[1],self.tr(pl[2]),[QgsProcessing.TypeVector],'',bool(strtobool(pl[4]))))
             if pl[0]=='ParameterNumber':
                 try:
                     int(pl[5])

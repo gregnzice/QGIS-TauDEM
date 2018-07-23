@@ -196,7 +196,8 @@ class TauDEMAlgorithm(QgsProcessingAlgorithm):
                     commands.append(inLayer.source())
 
             elif isinstance(param, QgsProcessingParameterBoolean):
-                commands.append(param.name())
+                if self.parameterAsBool(parameters, param.name(), context):
+                    commands.append(param.name())
             elif isinstance(param, QgsProcessingParameterString):
                 commands.append(param.name())
                 commands.append(self.parameterAsString(parameters,param.name(),context))

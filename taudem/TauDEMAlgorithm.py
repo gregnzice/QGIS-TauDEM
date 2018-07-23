@@ -173,7 +173,7 @@ class TauDEMAlgorithm(QgsProcessingAlgorithm):
                     pflag=1
                     pparametertxt=pparametertxt+' '+self.parameterAsString(parameters,param.name(),context)
 
-                elif param.name()=='-thresh':
+                elif self.cmdName=='gridnet' and param.name()=='-thresh':
                     if commands[-2]=='-mask':
                         commands.append(param.name())
                         commands.append(self.parameterAsString(parameters,param.name(),context))

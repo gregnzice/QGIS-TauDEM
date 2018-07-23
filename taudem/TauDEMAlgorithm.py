@@ -48,6 +48,7 @@ from qgis.core import (QgsProcessing,
                        QgsProcessingParameterVectorLayer,
                        QgsProcessingParameterRasterLayer,
                        QgsProcessingParameterRasterDestination,
+                       QgsProcessingParameterVectorDestination,
                        QgsProcessingParameterFileDestination,
                        QgsDefaultValue,
                        QgsRasterLayer,
@@ -117,6 +118,8 @@ class TauDEMAlgorithm(QgsProcessingAlgorithm):
             ol=out.split('|')
             if ol[0]=='OutputRaster':
                 self.addParameter(QgsProcessingParameterRasterDestination(ol[1][1:],self.tr(ol[2])))
+            if ol[0]=='OutputVector':
+                self.addParameter(QgsProcessingParameterVectorDestination(ol[1][1:],self.tr(ol[2])))
             if ol[0]=='OutputFile':
                 self.addParameter(QgsProcessingParameterFileDestination(ol[1][1:],self.tr(ol[2])))
 
@@ -212,6 +215,10 @@ class TauDEMAlgorithm(QgsProcessingAlgorithm):
         param.name(),context))
 
             elif isinstance(param, QgsProcessingParameterRasterDestination):
+                outLayer = self.parameterAsOutputLayer(parameters, param.name(), context)
+                commands.append('-'+param.name())
+                commands.append(outLayer)
+            elif isinstance(param, QgsProcessingParameterVectorDestination):
                 outLayer = self.parameterAsOutputLayer(parameters, param.name(), context)
                 commands.append('-'+param.name())
                 commands.append(outLayer)

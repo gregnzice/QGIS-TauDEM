@@ -232,7 +232,12 @@ class TauDEMAlgorithm(QgsProcessingAlgorithm):
         if mflag==1:
             commands.append(mparametertxt)
         TauDEMUtils.executeTauDEM(commands, feedback)
-        return {}
+        results = {}
+        for output in self.outputDefinitions():
+            outputName = output.name()
+            if outputName in parameters:
+                results[outputName] = parameters[outputName]
+        return results
 
     def helpUrl(self):
         helpPath='http://hydrology.usu.edu/taudem/taudem5/help53/'

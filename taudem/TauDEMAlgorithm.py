@@ -28,7 +28,7 @@ __revision__ = '$Format:%H$'
 import os
 from ast import literal_eval
 from distutils.util import strtobool
-from processing.core.ProcessingLog import ProcessingLog
+#from processing.core.ProcessingLog import ProcessingLog
 from processing.core.ProcessingConfig import ProcessingConfig, Setting
 from PyQt5.QtCore import QCoreApplication, QUrl
 from PyQt5.QtGui import QIcon

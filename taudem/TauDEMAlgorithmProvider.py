@@ -30,7 +30,7 @@ import os
 from qgis.PyQt.QtCore import QCoreApplication
 from PyQt5.QtGui import QIcon
 from qgis.core import QgsProcessingProvider,QgsMessageLog,Qgis
-from processing.core.ProcessingLog import ProcessingLog
+#from processing.core.ProcessingLog import ProcessingLog
 from processing.core.ProcessingConfig import ProcessingConfig, Setting
 from .TauDEMUtils import TauDEMUtils
 from . import resources

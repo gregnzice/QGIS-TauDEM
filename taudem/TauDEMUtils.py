@@ -35,7 +35,7 @@ from qgis.PyQt.QtCore import QCoreApplication
 from qgis.core import QgsApplication,QgsMessageLog
 from qgis.core import Qgis
 from processing.core.ProcessingConfig import ProcessingConfig
-from processing.core.ProcessingLog import ProcessingLog
+#from processing.core.ProcessingLog import ProcessingLog
 
 class TauDEMUtils:
 

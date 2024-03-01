@@ -99,17 +99,16 @@ class TauDEMAlgorithm(QgsProcessingAlgorithm):
             if pl[0]=='ParameterVector':
                 self.addParameter(QgsProcessingParameterVectorLayer(pl[1],self.tr(pl[2]),[QgsProcessing.TypeVector],'',bool(strtobool(pl[4]))))
             if pl[0]=='ParameterNumber':
-                try:
-                    int(pl[5])
+                if isinstance(pl[5],int):
                     if pl[4] !='None':
-                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),0,int(pl[5]),False,int(pl[3]),int(pl[4])))
+                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),QgsProcessingParameterNumber.Integer,int(pl[5]),False,int(pl[3]),int(pl[4])))
                     else:
-                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),0,int(pl[5]),False,int(pl[3])))
-                except ValueError:
+                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),QgsProcessingParameterNumber.Integer,int(pl[5]),False,int(pl[3])))
+                else:
                     if pl[4] !='None':
-                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),1,float(pl[5]),False,float(pl[3]),float(pl[4])))
+                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),QgsProcessingParameterNumber.Double,float,float(pl[5]),False,float(pl[3]),float(pl[4])))
                     else:
-                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),1,float(pl[5]),False,float(pl[3])))
+                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),QgsProcessingParameterNumber.Double,float,float(pl[5]),False,float(pl[3])))
             if pl[0]=='ParameterBoolean':
                 self.addParameter(QgsProcessingParameterBoolean(pl[1],self.tr(pl[2]),bool(strtobool(pl[3])),False))
             if pl[0]=='ParameterEnum':

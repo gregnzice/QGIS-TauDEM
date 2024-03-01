@@ -106,9 +106,9 @@ class TauDEMAlgorithm(QgsProcessingAlgorithm):
                         self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),QgsProcessingParameterNumber.Integer,int(pl[5]),False,int(pl[3])))
                 else:
                     if pl[4] !='None':
-                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),QgsProcessingParameterNumber.Double,float,float(pl[5]),False,float(pl[3]),float(pl[4])))
+                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),QgsProcessingParameterNumber.Double,float(pl[5]),False,float(pl[3]),float(pl[4])))
                     else:
-                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),QgsProcessingParameterNumber.Double,float,float(pl[5]),False,float(pl[3])))
+                        self.addParameter(QgsProcessingParameterNumber(pl[1],self.tr(pl[2]),QgsProcessingParameterNumber.Double,float(pl[5]),False,float(pl[3])))
             if pl[0]=='ParameterBoolean':
                 self.addParameter(QgsProcessingParameterBoolean(pl[1],self.tr(pl[2]),bool(strtobool(pl[3])),False))
             if pl[0]=='ParameterEnum':
